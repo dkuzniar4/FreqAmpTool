@@ -1,17 +1,13 @@
 import numpy as np
 from scipy.io import wavfile
+from settings import *
 
 print('TestToneGenerator')
 print('Exponential')
 # f(t) = f0*(k^t)
 
-startFreq = 100
-stopFreq = 20000
-fs = 44100
 ts = 1/fs
-lengthTime = 1.0
 sampleNum = int(fs * lengthTime)
-gainStep = 0.05
 gainStepNum = int(1.0/gainStep)
 
 print('Sampling frequency:', fs, 'Hz')
