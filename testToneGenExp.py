@@ -16,7 +16,7 @@ gainStepNum = int(1.0/gainStep)
 
 print('Sampling frequency:', fs, 'Hz')
 print('Number of samples:', sampleNum * gainStepNum)
-print('Time length:',  * gainStepNum, 's')
+print('Time length:', lengthTime * gainStepNum, 's')
 
 timeTab = np.linspace(0, lengthTime, sampleNum)
 gainTab = np.linspace(gainStep, 1.0, gainStepNum)
