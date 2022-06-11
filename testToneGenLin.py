@@ -3,6 +3,7 @@ from scipy.io import wavfile
 
 print('TestToneGenerator')
 print('Linear')
+# f(t) = c*t + f0
 
 startFreq = 100
 stopFreq = 20000
@@ -18,7 +19,6 @@ print('Number of samples:', sampleNum * gainStepNum)
 print('Time length:', lengthTime * gainStepNum, 's')
 
 timeTab = np.linspace(0, lengthTime, sampleNum)
-freqTab = np.linspace(startFreq, stopFreq, sampleNum)
 gainTab = np.linspace(gainStep, 1.0, gainStepNum)
 
 c = (stopFreq - startFreq) / lengthTime

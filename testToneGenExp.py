@@ -3,6 +3,7 @@ from scipy.io import wavfile
 
 print('TestToneGenerator')
 print('Exponential')
+# f(t) = f0*(k^t)
 
 startFreq = 100
 stopFreq = 20000
@@ -18,7 +19,6 @@ print('Number of samples:', sampleNum * gainStepNum)
 print('Time length:',  * gainStepNum, 's')
 
 timeTab = np.linspace(0, lengthTime, sampleNum)
-freqTab = np.linspace(startFreq, stopFreq, sampleNum)
 gainTab = np.linspace(gainStep, 1.0, gainStepNum)
 
 k = (stopFreq/startFreq)**(1/lengthTime)
