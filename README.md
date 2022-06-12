@@ -1,6 +1,10 @@
 # FreqAmpTool
 Tool for creating multidimensional frequency characteristics
 
+Before use this tool you should install dependencies:
+
+plotly, numpy, scipy
+
 1. For first you should edit file settings.py as you prefer:
 
    \# Settings
