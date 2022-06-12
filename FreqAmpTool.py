@@ -27,8 +27,8 @@ low_pass_single_pole = LowPassSinglePole(decay)
 
 # load wav file
 sampleRate, Signal = wavfile.read(fileName)
-# extract only first column (one channel)
-Signal = Signal[:,[0]]
+# extract only first column (one channel), when file is stereo
+# Signal = Signal[:,[0]]
 
 # reshape Signal to separate characteristics
 SignalOut = np.reshape(Signal, (gainStepNum,sampleNum))
