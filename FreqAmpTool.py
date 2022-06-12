@@ -35,6 +35,7 @@ SignalOut = np.reshape(Signal, (gainStepNum,sampleNum))
 # cast int to float
 SignalOut = SignalOut.astype(np.float32)
 
+# DSP/ get the envelope of chirp test signals
 for j in range(gainStepNum):
     for i in range(sampleNum):
         # normalisation of amplitude 
