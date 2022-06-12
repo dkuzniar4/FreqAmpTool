@@ -74,7 +74,11 @@ plotly, numpy, scipy
    todo:
 
    - add labels to axes
+   
    - change amplitude scale to dB
+   
+   - change shape of 3d figure and color
+   
    - ...
    
       
