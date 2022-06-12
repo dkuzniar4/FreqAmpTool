@@ -34,4 +34,9 @@ freqAxisLin = (c * timeTab) + startFreq
 # Exponential
 # f(t) = f0*(k^t)
 freqAxisExp = startFreq * (k**timeTab)
+# Assign proper axix type
+if testToneType == 'exp':
+    freqAxis = freqAxisExp
+elif testToneType == 'lin':
+    freqAxis = freqAxisLin
 

@@ -43,13 +43,9 @@ plotly, numpy, scipy
 
 2. Next step is generation of test tone:
 
-   Depend of choosen test tone type run
+   Run 
 
-   python testToneGenExp.py
-
-   or
-
-   python testToneGenLin.py
+   python testToneGen.py
 
 3. Pass test tone through the DUT (e.g. guitar amp) and record it.
 
@@ -61,7 +57,7 @@ plotly, numpy, scipy
 
    Save it in the same format.
 
-5. Run FreqAmpTool <"wav file"> to plot 3d surface figure with Frequency characteristics depends of signal amplitude
+5. Run FreqAmpTool <"wav_file_name"> to plot 3d surface figure with Frequency characteristics depends of signal amplitude
 
    e.g.
 
@@ -73,17 +69,13 @@ plotly, numpy, scipy
 
    todo:
 
-   - add labels to axes
-   
    - change amplitude scale to dB
-   
-   - change shape of 3d figure and color
-   
+
    - ...
-   
+
       
-   
+
       
-   
+
    
 

@@ -1,16 +1,17 @@
 from settings import *
 
 print('TestToneGenerator')
-print('Linear')
-# f(t) = c*t + f0
+print('Exponential')
+# f(t) = f0*(k^t)
 
 print('Sampling frequency:', fs, 'Hz')
 print('Number of samples:', sampleNum * gainStepNum)
 print('Time length:', lengthTime * gainStepNum, 's')
 
-
-
-chirpTab = np.sin(phi0 + 2 * np.pi * ((c * 0.5 * timeTab * timeTab) + startFreq * timeTab))
+if testToneType == 'exp':
+    chirpTab = np.sin(phi0 + 2 * np.pi * startFreq * ((k**timeTab - 1)/(np.log(k))))
+elif testToneType == 'lin':
+    chirpTab = np.sin(phi0 + 2 * np.pi * ((c * 0.5 * timeTab * timeTab) + startFreq * timeTab))
 
 TestTone = np.array([])
 for i in gainTab:
@@ -19,5 +20,5 @@ for i in gainTab:
 
 TestTone = np.asarray(TestTone, dtype=np.int16)
 
-wavfile.write('TestToneGenLin.wav', fs, TestTone)
-print('TestToneGenLin.wav was saved!')
+wavfile.write('TestTone.wav', fs, TestTone)
+print('TestTone.wav was saved!')

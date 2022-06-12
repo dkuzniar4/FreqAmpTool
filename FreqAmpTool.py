@@ -44,13 +44,9 @@ for j in range(gainStepNum):
         # low pass filter
         SignalOut[j][i] = low_pass_single_pole.filter(SignalOut[j][i])
 
-# Assign proper axix type
-if testToneType == 'exp':
-    axisType = freqAxisExp
-elif testToneType == 'lin':
-    axisType = freqAxisExp
-
 # plot 3d surface figure
-fig = go.Figure(data=[go.Surface(z=SignalOut, x=axisType, y=gainTab)])
+fig = go.Figure(data=[go.Surface(z=SignalOut, x=freqAxis, y=gainTab*100, colorbar_x=0)])
 fig.update_scenes(xaxis_type="log")
+fig.update_layout(title='Multidimensional frequency characteristics', autosize=True,
+                  scene_aspectmode='cube', scene=dict(xaxis_title='frequency [Hz]', yaxis_title='gain [%]', zaxis_title='amplitude [ku]'))
 fig.show()
