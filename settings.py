@@ -14,6 +14,8 @@ lengthTime = 1.0
 gainStep = 0.05
 # start phase in [rad]
 phi0 = 0
+# test tone type 'exp' or 'lin'
+testToneType = 'exp'
 # --------------------------------------------------
 
 # Common variables

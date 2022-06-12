@@ -44,7 +44,13 @@ for j in range(gainStepNum):
         # low pass filter
         SignalOut[j][i] = low_pass_single_pole.filter(SignalOut[j][i])
 
+# Assign proper axix type
+if testToneType == 'exp':
+    axisType = freqAxisExp
+elif testToneType == 'lin':
+    axisType = freqAxisExp
+
 # plot 3d surface figure
-fig = go.Figure(data=[go.Surface(z=SignalOut, x=freqAxisExp, y=gainTab)])
+fig = go.Figure(data=[go.Surface(z=SignalOut, x=axisType, y=gainTab)])
 fig.update_scenes(xaxis_type="log")
 fig.show()
