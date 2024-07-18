@@ -1,69 +1,43 @@
 # FreqAmpTool
-Tool for creating multidimensional frequency characteristics
+Tool for creating 3D frequency characteristics vs gain
 
 Before use this tool you should install dependencies:
 
-plotly, numpy, scipy
+plotly, numpy, soundfile
 
-1. For first you should edit file settings.py as you prefer:
+1. In GUI you can set measurements parameters:
 
-   \# Settings
+   Sampling frequency
 
-   \# --------------------------------------------------
+   Time duration (of test tone)
 
-   \# start frequency [Hz]
+   Type of test tone
 
-   startFreq = 100
+   Gain step
 
-   \# stop frequency [Hz]
+   Start frequency
 
-   stopFreq = 20000
-
-   \# sampling frequency [Hz]
-
-   fs = 44100
-
-   \# length time (for one amp measure) [s]
-
-   lengthTime = 1.0
-
-   \# step for amplitude gain [0 < gainStep < 1.0] 
-
-   gainStep = 0.05
-
-   \# start phase in [rad]
-
-   phi0 = 0
-
-   \# test tone type 'exp' or 'lin'
-
-   testToneType = 'exp'
+   Stop frequency
 
    \# --------------------------------------------------
 
 2. Next step is generation of test tone:
 
-   Run 
-
-   python testToneGen.py
+   Click "Save params"  button and then click "Generate test tone" to save test tone to wav file.
 
 3. Pass test tone through the DUT (e.g. guitar amp) and record it.
 
-4. Prepare test tone output by cut signal to the same length like original test tone
+4. Prepare test tone output by cut signal to the same length or slightly longer like original test tone
 
    You can use Audacity to do it
 
    ![alt](<Docs/Images/audacityCut.png>)
 
-   Save it in the same format.
+   Export processed signal to wav file.
 
-5. Run FreqAmpTool <"wav_file_name"> to plot 3d surface figure with Frequency characteristics depends of signal amplitude
+5. Load processed wav file by clicking "Load wav file" button.
 
-   e.g.
-
-   python FreqAmpTool.py Output.wav
-
-   then you should see 3D surface plot in you browser.
+6. Click "Show figure" to see 3D surface plot in you browser.
 
    ![alt](<Docs/Images/3dFig.png>)
 
